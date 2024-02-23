@@ -3,7 +3,8 @@ import{S as m,i as g}from"./assets/vendor-5b791d57.js";(function(){const o=docum
     <img
       class="gallery-image"
       src="${o}"
-      alt="${i}"/>
+      alt="${i}"
+      height="250px"/>
   </a>
   <ul class="img-reactions">
   
@@ -28,5 +29,5 @@ import{S as m,i as g}from"./assets/vendor-5b791d57.js";(function(){const o=docum
   </li>
 
   </ul>
-</li>`).join("")}function d(n){const o="42523874-92f67aed3babfb2c9b36364a5",r="https://pixabay.com/api/",i=n.trim(),a=`${r}?key=${o}&q=${i}&image_type=photo&orientation=horizontal&safesearch=true`;return fetch(a).then(l=>{if(!l.ok)throw new Error(l.status);return l.json()})}const u=document.querySelector(".gallery"),f=document.querySelector(".input-img"),y=document.querySelector(".form");document.querySelector(".btn-sub");const c=document.querySelector(".loading");c.style.display="none";function h(n){n.preventDefault();const o=f.value.trim();if(!o)return $();c.style.display="inline-block",d(o).then(r=>{const i=r.hits;if(i.length)u.innerHTML=p(i),new m(".gallery a.gallery-link",{captionsData:"alt",captionDelay:300}).refresh();else return u.innerHTML="",b()}).catch(r=>console.log(r)).finally(()=>{c.style.display="none"}),f.value=""}y.addEventListener("submit",h);function b(){g.error({message:"Sorry, there are no images matching your search query. Please try again!",title:"Error",titleColor:"#fff",backgroundColor:"rgba(239, 64, 64, 1)",messageColor:"#fff",position:"topRight"})}function $(){g.warning({title:"Увага!",position:"topRight",backgroundColor:"orange",message:"Поле пошуку не може бути порожнім!"})}
+</li>`).join("")}function h(n){const o="42523874-92f67aed3babfb2c9b36364a5",r="https://pixabay.com/api/",i=n.trim(),a=`${r}?key=${o}&q=${i}&image_type=photo&orientation=horizontal&safesearch=true`;return fetch(a).then(l=>{if(!l.ok)throw new Error(l.status);return l.json()})}const u=document.querySelector(".gallery"),f=document.querySelector(".input-img"),d=document.querySelector(".form");document.querySelector(".btn-sub");const c=document.querySelector(".loading");c.style.display="none";function y(n){n.preventDefault();const o=f.value.trim();if(!o)return $();c.style.display="inline-block",h(o).then(r=>{const i=r.hits;if(i.length)u.innerHTML=p(i),new m(".gallery a.gallery-link",{captionsData:"alt",captionDelay:300}).refresh();else return u.innerHTML="",b()}).catch(r=>console.log(r)).finally(()=>{c.style.display="none"}),f.value=""}d.addEventListener("submit",y);function b(){g.error({message:"Sorry, there are no images matching your search query. Please try again!",title:"Error",titleColor:"#fff",backgroundColor:"rgba(239, 64, 64, 1)",messageColor:"#fff",position:"topRight"})}function $(){g.warning({title:"Увага!",position:"topRight",backgroundColor:"orange",message:"Поле пошуку не може бути порожнім!"})}
 //# sourceMappingURL=commonHelpers.js.map
