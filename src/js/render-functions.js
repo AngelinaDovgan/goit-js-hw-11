@@ -5,7 +5,8 @@ export default function createMarkup(images) {
     <img
       class="gallery-image"
       src="${webformatURL}"
-      alt="${tags}"/>
+      alt="${tags}"
+      height="250px"/>
   </a>
   <ul class="img-reactions">
   

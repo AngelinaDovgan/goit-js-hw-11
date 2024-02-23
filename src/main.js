@@ -37,7 +37,7 @@ function loadImg(event) {
                 });
                 lightbox.refresh();
             }
-       
+    
         })
         .catch(error => console.log(error))
       .finally(() => {
