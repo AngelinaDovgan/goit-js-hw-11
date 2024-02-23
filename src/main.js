@@ -10,15 +10,20 @@ const list = document.querySelector(".gallery");
 const input = document.querySelector(".input-img");
 const form = document.querySelector(".form");
 const btn = document.querySelector(".btn-sub");
+const loading = document.querySelector(".loading");
+
+loading.style.display = 'none';
 
 function loadImg(event) {
     event.preventDefault();
+
     const inputValue = input.value.trim();
     if (!inputValue) {
-    return warningNotification();
+        return warningNotification();
     }
 
-    getImages(input.value)
+    loading.style.display = 'inline-block';
+    getImages(inputValue)
         .then(data => {
             const images = data.hits;
             if (!images.length) {
@@ -35,6 +40,9 @@ function loadImg(event) {
        
         })
         .catch(error => console.log(error))
+      .finally(() => {
+      loading.style.display = 'none';
+    });
     input.value = '';
 }
 
@@ -56,6 +64,6 @@ function warningNotification(){
        title: 'Увага!',
        position: "topRight",
        backgroundColor: "orange",
-    message: 'Поле пошуку не може бути порожнім!',
-});
+       message: 'Поле пошуку не може бути порожнім!',
+   });
 }

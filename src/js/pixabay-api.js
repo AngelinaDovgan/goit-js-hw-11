@@ -1,3 +1,4 @@
+
 export default function getImages(inputValue) {
     const KEY = '42523874-92f67aed3babfb2c9b36364a5';
     const basicURL = 'https://pixabay.com/api/';
